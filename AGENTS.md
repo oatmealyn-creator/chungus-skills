@@ -12,6 +12,7 @@ At the start of your first response, show this checklist:
 [ ] Phase 1 — Think before code
 [ ] Phase 2 — Clean code (skip if no files touched)
 [ ] Phase 3 — Pre-ship audit (skip if no deploy intent)
+[ ] Phase 4 — Self-healing health (skip if no container/k8s)
 ```
 Every `[x]` must have proof below it.
 
@@ -30,7 +31,7 @@ TDD: red → green → refactor, one slice at a time.
 ## PHASE 3 — PARANOID TRIGGER
 Activates on: deploy, ship, push, publish, release, go live, make live, launch, prod, production, build, merge, PR, start. IF UNSURE, RUN IT.
 
-Run 7-step audit with PROOF for every check:
+Run 8-step audit with PROOF for every check:
 1. Vibe-coding self-check
 2. Analytics
 3. Payment flow (both directions)
@@ -38,8 +39,14 @@ Run 7-step audit with PROOF for every check:
 5. API auth bypass test (curl without token)
 6. Blocking behavior under load
 7. Legal: Privacy Policy, CalOPPA, COPPA, GDPR, Terms, Trademark
+8. Operational resilience — HEALTHCHECK, restart policy, graceful shutdown, /health /ready endpoints
 
 Every `[x]` needs the curl output, SQL result, or screenshot showing it passed.
+
+## PHASE 4 — CONTAINER SELF-HEALING
+Triggers on: docker, container, compose, k8s, kubernetes, cluster, pod, restart, health check, probe, self-heal, watch, monitor.
+
+Mandatory: HEALTHCHECK in Dockerfile or compose healthcheck block. restart: unless-stopped. Graceful SIGTERM handler. /health + /ready endpoints. Logs to stdout only. Health-based dependency conditions. K8s probes tuned per service.
 
 ## FINAL VERDICT
 If any phase failed → DO NOT SHIP. Report exactly what failed. Warn user once more if they insist.

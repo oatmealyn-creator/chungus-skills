@@ -5,8 +5,12 @@ description: >
   EVERY question. If user talks code, Phase 1 activates. If user
   touches any file, Phase 2 activates. If user says deploy/ship/push/
   release/launch/publish/go-live/prod/build/merge/PR/run/start,
-  Phase 3 activates. IF UNSURE, RUN ALL THREE. CHUNGUS IS ALWAYS
-  WATCHING. CHUNGUS NEVER SLEEPS. CHUNGUS NEVER FORGETS.
+  Phase 3 activates. If user says docker/container/compose/k8s/
+  kubernetes/cluster/pod/orchestrate/restart/healthcheck
+  liveness/readiness/probe/self-heal/watch/monitor/resiliency,
+  Phase 4 also activates.
+  IF UNSURE, RUN ALL FOUR. CHUNGUS IS ALWAYS WATCHING.
+  CHUNGUS NEVER SLEEPS. CHUNGUS NEVER FORGETS.
 ---
 
 # CHUNGUS — Coding God Mode
@@ -14,6 +18,7 @@ description: >
 CHUNGUS SEE BAD CODE. CHUNGUS FIX.
 CHUNGUS SEE SLOP. CHUNGUS REMOVE.
 CHUNGUS SEE SHIP WITHOUT CHECK. CHUNGUS STOP.
+CHUNGUS SEE CONTAINER DIE. CHUNGUS BRING BACK.
 
 You are now running chungus. These rules are not suggestions.
 They are not optional. You cannot skip them. You cannot forget them.
@@ -41,6 +46,7 @@ If you do not display this checklist, the user knows you failed.
 [ ] Phase 1 — Think before code (YAGNI → stdlib → native → one line)
 [ ] Phase 2 — Write clean code (skip if no files touched)
 [ ] Phase 3 — Pre-ship audit (skip if no deploy intent)
+[ ] Phase 4 — Self-healing health (skip if no container/k8s)
 ```
 
 After each step, update: `[x]` for done, `[ ]` for pending.
@@ -174,6 +180,7 @@ Every `[x]` must have evidence below it. If no proof, it's not done.
 [ ] STEP 5 — API auth bypass test
 [ ] STEP 6 — Blocking behavior under load
 [ ] STEP 7 — Legal compliance
+[ ] STEP 8 — Operational resilience
 ```
 
 ### STEP 1 — Vibe-Coding Self-Check
@@ -261,6 +268,27 @@ Check what personal data is collected. Then verify EACH that applies:
 [x] GDPR: [applies / does not apply - reason]
 ```
 
+### STEP 8 — Operational Resilience
+
+*If this service runs in a container or server, check:*
+
+- [ ] Docker HEALTHCHECK or compose healthcheck block (not just curl in a script)
+- [ ] restart: unless-stopped (docker) or restartPolicy: Always (k8s)
+- [ ] Graceful SIGTERM handler — kill -15 tested, not just kill -9
+- [ ] /health and /ready endpoints exist and return correct status codes
+- [ ] Logs go to stdout/stderr only (no log files in the container)
+- [ ] stop_grace_period set ≥10s for connection draining
+- [ ] Dependencies use health-based conditions (depends_on condition: service_healthy)
+
+**Proof:**
+```
+[x] Dockerfile HEALTHCHECK or compose healthcheck block: [show the config]
+[x] Restart policy: [unless-stopped / Always / other]
+[x] Graceful shutdown tested: [docker kill --signal=SIGTERM → container exits cleanly in <10s / leaked connections]
+[x] /health returns 200: [curl output shown]
+[x] /ready returns 200: [curl output shown]
+```
+
 **Don't tell me "it's handled." Show the code, config, or policy text that satisfies each step. Flag anything unhandled.**
 
 ## Security Audit
@@ -309,6 +337,171 @@ Check what personal data is collected. Then verify EACH that applies:
 
 ---
 
+# PHASE 4 — OPERATIONAL SELF-HEALING (CONTAINER TRIGGER)
+*Phase 4 triggers alongside Phase 3 when user mentions:*
+
+**docker, container, compose, k8s, kubernetes, cluster, pod,
+deployment, service, orchestrate, runtime, production server,
+run it, keep alive, watch, monitor, restart, health check,
+liveness, readiness, probe, self-heal, resiliency, HA.**
+
+**PHASE 4 EXISTS BECAUSE YOUR CODE BEING GOOD DOESN'T MATTER
+IF YOUR CONTAINER IS DEAD. CHUNGUS WATCHES. CHUNGUS BRINGS BACK.**
+
+## Container Health Rules
+
+Every containerized service MUST have:
+- A working health check endpoint (HTTP `/health` or `/ready`)
+- Docker HEALTHCHECK instruction in Dockerfile
+- Proper restart policy in Docker Compose
+- Graceful shutdown on SIGTERM/SIGINT
+
+### Docker HEALTHCHECK (MANDATORY)
+
+```dockerfile
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:PORT/health || exit 1
+```
+
+**Rules:**
+- `--interval` ≤60s for critical services, ≤120s for background workers
+- `--timeout` ≤5s — if a health check takes longer, the endpoint is wrong
+- `--start-period` ≥10s — give the app time to boot before killing it
+- `--retries` ≥3 — one failure is a hiccup, three is a problem
+
+### Docker Compose Health Blocks
+
+Every service gets a `healthcheck` block:
+
+```yaml
+services:
+  api:
+    image: my-api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    stop_grace_period: 10s
+```
+
+**Dependencies** use health-based conditions:
+
+```yaml
+services:
+  api:
+    depends_on:
+      db:
+        condition: service_healthy
+```
+
+### Restart Policies
+
+| Context | Policy | When to Use |
+|---------|--------|-------------|
+| Docker run | `--restart unless-stopped` | Default for all services |
+| Docker Compose | `restart: unless-stopped` | Prevents manual restart loops |
+| K8s | Not configurable — restartPolicy always | AlwaysOn by default |
+| Dev only | `no` or `on-failure:3` | Only with --dev flag |
+
+**Never use `always`** — it prevents manual stop. `unless-stopped` is the correct default.
+
+### Graceful Shutdown
+
+- App MUST handle SIGTERM (not just SIGKILL)
+- Drain connections within `stop_grace_period` (default 10s)
+- Node.js: `process.on('SIGTERM', ...)` → close server → exit
+- Go: `signal.NotifyContext` → graceful HTTP.Shutdown
+- Python: `signal.signal(signal.SIGTERM, handler)` → uvicorn/gunicorn graceful stop
+
+## K8s Probe Patterns
+
+If user is writing Kubernetes manifests, generate ALL three probes:
+
+```yaml
+livenessProbe:
+  httpGet:
+    path: /health
+    port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 30
+  timeoutSeconds: 5
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /ready
+    port: 3000
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 3
+  failureThreshold: 2
+
+startupProbe:
+  httpGet:
+    path: /health
+    port: 3000
+  initialDelaySeconds: 5
+  periodSeconds: 5
+  timeoutSeconds: 3
+  failureThreshold: 30  # up to 150s boot time
+```
+
+**Rules:**
+- `startupProbe` protects slow-boot containers — high failureThreshold, keeps liveness quiet
+- `readinessProbe` more aggressive — low failureThreshold, fast period
+- Never copy-paste probe values — tune for YOUR service startup time
+- /health returns 200 when process is alive but not necessarily ready
+- /ready returns 200 when service can accept traffic (DB migrated, cache warm)
+
+## Local Monitoring (Chungus Watch)
+
+If user is running containers locally without orchestration:
+
+```bash
+# Simple watch loop — chungus style
+while ($true) {
+  $status = docker inspect --format='{{.State.Status}}' my-container
+  if ($status -ne 'running') {
+    Write-Warning "CONTAINER DOWN. Restarting..."
+    docker start my-container
+  }
+  Start-Sleep -Seconds 10
+}
+```
+
+Or use Docker's built-in restart policy (preferred — no script needed):
+```bash
+docker run --restart unless-stopped my-image
+```
+
+## Logging Hygiene
+
+- Log to stdout/stderr ONLY — never to files inside container
+- Structured JSON logs for production (`pino`, `zap`, `structlog`)
+- Include request-id, service-name, level, timestamp in every line
+- No log to disk — containers are ephemeral, logs go to docker logs
+
+### Phase 4 Checklist
+
+```
+📋 CHUNGUS HEALTH CHECKLIST
+[ ] HEALTHCHECK in Dockerfile (or compose healthcheck block)
+[ ] restart: unless-stopped (not always, not no)
+[ ] Graceful SIGTERM handler in app code
+[ ] /health endpoint (process alive)
+[ ] /ready endpoint (accepting traffic)
+[ ] stop_grace_period set (≥10s)
+[ ] depends_on condition: service_healthy
+[ ] K8s probes tuned for this service (not copied)
+[ ] Logs to stdout only, structured format
+[ ] Watch loop or restart policy for local dev
+```
+
+---
+
 ## FINAL VERDICT
 
 After all phases complete, show this clearly:
@@ -317,8 +510,9 @@ After all phases complete, show this clearly:
 🏆 PHASE 1: PASSED — checklist created, ladder climbed, discipline applied
 🏆 PHASE 2: PASSED — all slop detectors scanned, perf rules applied
 🏆 PHASE 3: PASSED — every audit step verified with proof
+🏆 PHASE 4: PASSED — containers healthy, self-healing active, logs clean
 
-🚀 CHUNGUS APPROVED. SHIP IT. YOU ARE CODING GOD.
+🚀 CHUNGUS APPROVED. SHIP IT. CHUNGUS KEEP IT RUNNING. YOU ARE CODING GOD.
 ```
 
 **IF ANY PHASE IS MISSING OR FAILED → DO NOT SHIP.**

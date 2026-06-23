@@ -1,7 +1,7 @@
 {
   "name": "chungus-skills",
-  "version": "1.0.0",
-  "description": "CHUNGUS — Coding God Mode. One install. AI automatically writes minimum code, avoids slop, optimizes React/Next.js, runs prelaunch audits, follows TDD, and secures your app.",
+  "version": "1.1.0",
+  "description": "CHUNGUS — Coding God Mode. One install. AI automatically writes minimum code, avoids slop, optimizes React/Next.js, self-heals containers, runs prelaunch audits, follows TDD, and secures your app.",
   "keywords": [
     "agent-skills",
     "chungus",
@@ -15,7 +15,12 @@
     "gemini-cli",
     "github-copilot",
     "prelaunch-audit",
-    "ai-slop-detector"
+    "ai-slop-detector",
+    "container-health",
+    "self-healing",
+    "kubernetes-probes",
+    "docker-healthcheck",
+    "operational-resilience"
   ],
   "license": "MIT"
 }

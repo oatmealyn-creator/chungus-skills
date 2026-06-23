@@ -7,6 +7,7 @@
 CHUNGUS SEE BAD CODE. CHUNGUS FIX.
 CHUNGUS SEE SLOP. CHUNGUS REMOVE.
 CHUNGUS SEE SHIP WITHOUT CHECK. CHUNGUS STOP.
+CHUNGUS SEE CONTAINER DIE. CHUNGUS BRING BACK.
 
 ---
 
@@ -17,7 +18,8 @@ One SKILL.md file that makes any AI agent automatically:
 - **Write minimal code** (ponytail's 7-rung ladder: YAGNI → stdlib → native → one line)
 - **Never produce AI slop** (40+ anti-pattern detectors: no Inter font, no purple gradients, no cream bg, no glassmorphism, no nested cards, no bounce easing...)
 - **Optimize React/Next.js** (70 perf rules from Vercel Engineering)
-- **Run prelaunch audits** (7-step checklist before every deploy: vibe check → analytics → payments → break DB → API bypass test → blocking check → legal compliance)
+- **Run prelaunch audits** (8-step checklist before every deploy: vibe check → analytics → payments → break DB → API bypass test → blocking check → legal compliance → operational resilience)
+- **Self-heal containers** (Docker HEALTHCHECK, restart policies, graceful shutdown, K8s liveness/readiness/startup probes)
 - **Follow TDD** (red-green-refactor, vertical slices)
 - **Fix architecture** (deepening scan, clean seams, deletion test)
 - **Secure your app** (auth bypass, RLS patterns, SQL injection, XSS, secrets)
@@ -35,7 +37,7 @@ npx skills add oatmealyn-creator/chungus-skills
 
 That's it. AI loads chungus. AI becomes coding god.
 
-Works on **62 agents**: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot, Gemini CLI, OpenCode, Codex, and 54 more.
+Works on **72 agents**: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot, Gemini CLI, OpenCode, Codex CLI, and 64 more.
 
 ---
 
@@ -59,7 +61,13 @@ SESSION START → AI reads chungus
     ┌──────────────────┘
     │  PHASE 3: AI creates prelaunch checklist → ticks each step:
     │  [ ] Vibe check  [ ] Analytics  [ ] Payments  [ ] Kill DB
-    │  [ ] API bypass  [ ] Blocking    [ ] Legal (CalOPPA, COPPA, GDPR, Terms)
+    │  [ ] API bypass  [ ] Blocking    [ ] Legal    [ ] Ops resilience
+    │
+    RUNS CONTAINER ───┤
+    ┌──────────────────┘
+    │  PHASE 4: AI generates health checks, restart policies, probes:
+    │  [ ] HEALTHCHECK  [ ] restart policy  [ ] graceful shutdown
+    │  [ ] /health + /ready  [ ] K8s probes  [ ] logs to stdout
 ```
 
 ---
@@ -93,6 +101,7 @@ SESSION START → AI reads chungus
 [ ] STEP 5 — API auth bypass — hit endpoints without token
 [ ] STEP 6 — Blocking behavior — connection pooling? concurrent? cached?
 [ ] STEP 7 — Legal — Privacy Policy, CalOPPA, COPPA, GDPR, Terms, Trademark
+[ ] STEP 8 — Operational resilience — HEALTHCHECK, restart policy, graceful shutdown, /health + /ready
 ```
 
 No other skill on skills.sh does this. Yours truly.
@@ -163,9 +172,12 @@ Built by combining the best parts of the most popular agent skills. Full respect
 ### Video
 - **remotion-best-practices** (remotion-dev/skills) — 386K
 
-### DevOps
+### DevOps & Runtime
 - **github-actions-docs** (xixu-me/skills) — 237K
 - **sentry-cli** (sentry/dev) — 88K
+- **Container health probes** (K8s liveness/readiness/startup patterns)
+- **Docker HEALTHCHECK + restart policies** (unless-stopped best practices)
+- **Graceful shutdown** (SIGTERM handling for Node/Go/Python)
 
 ### Skills
 - **skill-creator** (anthropics/skills) — 283K
@@ -178,7 +190,7 @@ Built by combining the best parts of the most popular agent skills. Full respect
 
 ## Platform Support
 
-Works on all 62 agents including: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot, Gemini CLI, OpenCode, Codex CLI, Antigravity CLI, Kiro CLI, Trae, Zed, Replit, Aider, Augment, Continue, Cline, Goose, Pi, Roo, and 42 more.
+Works on all 72 agents including: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot, Gemini CLI, OpenCode, Codex CLI, Antigravity CLI, Kiro CLI, Trae, Zed, Replit, Aider, Augment, Continue, Goose, Pi, Roo, and 53 more.
 
 ---
 

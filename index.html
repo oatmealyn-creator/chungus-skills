@@ -128,7 +128,7 @@ hr { border: none; border-top: 1px solid #222; margin: 1rem 0; }
 <div class="grid">
 <div>
 <h3>zero commands</h3>
-<p>ai auto-triggers from skill.md. no /commands. phase 1 always. phase 2 on code. phase 3 before ship.</p>
+<p>ai auto-triggers from skill.md. no /commands. phase 1 always. phase 2 on code. phase 3 before ship. phase 4 keeps it running.</p>
 </div>
 <div>
 <h3>40+ anti-slop detectors</h3>
@@ -149,6 +149,10 @@ hr { border: none; border-top: 1px solid #222; margin: 1rem 0; }
 <div>
 <h3>security audit</h3>
 <p>supabase rls. sql injection. xss. secrets leak. auth bypass. every endpoint verified before deploy.</p>
+</div>
+<div>
+<h3>container self-healing</h3>
+<p>healthcheck. restart unless-stopped. graceful sigterm. /health + /ready endpoints. k8s probes. logs to stdout. container die → chungus bring back.</p>
 </div>
 </div>
 </div>
@@ -182,6 +186,7 @@ hr { border: none; border-top: 1px solid #222; margin: 1rem 0; }
 <div class="clist-item"><span class="x">[ ]</span> step 5 - api auth bypass - hit endpoints without token</div>
 <div class="clist-item"><span class="x">[ ]</span> step 6 - blocking behavior - connection pool? concurrent?</div>
 <div class="clist-item"><span class="x">[ ]</span> step 7 - legal - privacy policy, caloppa, coppa, gdpr, terms</div>
+<div class="clist-item"><span class="x">[ ]</span> step 8 - ops resilience - healthcheck, restart, graceful shutdown, /health + /ready</div>
 </div>
 </div>
 
