@@ -2,7 +2,7 @@
 
 **One install. AI becomes coding god.**
 
-[![skills.sh](https://skills.sh/b/oatmealyn-creator/chungus-skills)](https://skills.sh/oatmealyn-creator/chungus-skills)
+[![skills.sh](https://skills.sh/b/oatmealyn-creator/chungus-skills)](https://skills.sh/oatmealyn-creator/chungus-skills) [🌐 Landing Page](https://chungus-skills.vercel.app)
 
 CHUNGUS SEE BAD CODE. CHUNGUS FIX.
 CHUNGUS SEE SLOP. CHUNGUS REMOVE.
