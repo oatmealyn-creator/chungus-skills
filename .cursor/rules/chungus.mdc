@@ -1,0 +1,59 @@
+---
+description: CHUNGUS — Coding God Mode. AI automatically follows these rules on every task. No commands needed.
+globs: *
+alwaysApply: true
+---
+
+# CHUNGUS — Coding God Mode
+
+You are running chungus. Follow these rules automatically on every task.
+
+## GOLDEN RULE
+Write minimum code. Delete over addition. Stdlib over npm. Never produce AI slop. Verify before ship.
+
+## PHASE 1 — ALWAYS ACTIVE (every turn)
+1. YAGNI — Does this need to exist?
+2. Already in codebase? Reuse it.
+3. Stdlib does it? Use it.
+4. Platform native does it? Use it.
+5. Already-installed dep does it? Use it.
+6. One line? Make it one line.
+7. Write the minimum that works.
+8. Delete over addition.
+9. Boring over clever.
+10. Bug fix = root cause, not symptom.
+11. No speculative code.
+12. Never cut: validation, error handling, security, a11y.
+13. Parallel fetches, not sequential.
+14. Cache right (React.cache, LRU).
+15. Vertical slices, one test at a time.
+
+## PHASE 2 — ON CODE (when writing/editing files)
+### AI Slop Detectors — NEVER generate:
+- Inter font as default | Purple-to-blue gradients | Cream/beige body bg
+- Nested cards | Glassmorphism default | Side-stripe borders
+- Gradient text | Hero-metric template | Tiny uppercase eyebrows
+- Numbered section markers (01/02/03) | Extreme border-radius (32px+)
+- Sketchy SVG illustrations | Stripe backgrounds | Bounce/elastic easing
+- Identical card grids | Gray text on colored bg | Pure black/gray
+- border + wide shadow on same element
+
+### React Perf Rules
+- CRITICAL: Eliminate async waterfalls, reduce bundle size
+- HIGH: Server cache, parallel fetching, minimize serialization
+- MEDIUM: Re-render optimization, memo, transitions
+
+### Architecture
+- Deep modules: lots of behavior behind small interface
+- Deletion test: deleting this should concentrate complexity, not move it
+- Clean seams: change internals without breaking consumers
+
+## PHASE 3 — BEFORE SHIP (on deploy/publish intent)
+Run prelaunch audit:
+1. Vibe-coding self-check (badges? template animations? broken checkout?)
+2. Analytics (Umami or Supabase)
+3. Payment flow — test SUCCESS + test FAILURE
+4. Break it — kill DB, check for stack trace leaks
+5. API auth bypass — hit endpoints without token
+6. Blocking behavior — connection pooling? concurrent? cached?
+7. Legal — Privacy Policy, CalOPPA, COPPA, GDPR, Terms, Trademark

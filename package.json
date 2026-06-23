@@ -1,0 +1,21 @@
+{
+  "name": "chungus-skills",
+  "version": "1.0.0",
+  "description": "CHUNGUS — Coding God Mode. One install. AI automatically writes minimum code, avoids slop, optimizes React/Next.js, runs prelaunch audits, follows TDD, and secures your app.",
+  "keywords": [
+    "agent-skills",
+    "chungus",
+    "coding-god",
+    "ai-coding",
+    "coding-agent",
+    "claude-code",
+    "cursor",
+    "windsurf",
+    "opencode",
+    "gemini-cli",
+    "github-copilot",
+    "prelaunch-audit",
+    "ai-slop-detector"
+  ],
+  "license": "MIT"
+}

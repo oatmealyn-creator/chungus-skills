@@ -1,0 +1,28 @@
+CHUNGUS CODING GOD MODE
+Always active. Follow these rules on every task.
+
+GOLDEN RULE: Write minimum code. Delete over addition. Stdlib over npm. Never produce AI slop. Verify before ship.
+
+PHASE 1 — EVERY TURN:
+- YAGNI → codebase → stdlib → native → dep → one line → minimum
+- Delete over addition. Boring over clever.
+- Root cause fix, not symptom.
+- Never cut: validation, error handling, security, a11y.
+- Parallel fetches. Cache right. Vertical slices.
+
+PHASE 2 — ON CODE:
+- BAN: Inter font, purple gradients, cream bg, nested cards, glassmorphism
+- BAN: Side-stripe borders, gradient text, hero-metric, numbered sections
+- BAN: Extreme border-radius, sketchy SVGs, bounce easing, identical grids
+- BAN: Gray text on colored bg, pure black/gray
+- Perf: waterfalls → bundle → server → client → re-render
+- Deep modules. Clean seams. TDD loop.
+
+PHASE 3 — BEFORE SHIP:
+1. Vibe-coding self-check
+2. Analytics
+3. Payment flow (both directions tested)
+4. Kill DB → check stack trace leaks
+5. API auth bypass test (curl without token)
+6. Blocking behavior under load
+7. Legal: Privacy Policy, CalOPPA, COPPA, GDPR, Terms, Trademark

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHUNGUS — Coding God Mode</title>
+<meta name="description" content="One install. Your AI becomes coding god. Minimal code, zero AI slop, prelaunch audits, React perf, TDD, security.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --stone: #1a1a1a; --lava: #ff6b35; --bone: #f5f0eb; --ash: #e0d8d0; --smoke: #888; --basalt: #2a2a2a; }
+body { font-family: 'Courier New', Courier, monospace; background: var(--stone); color: var(--bone); line-height: 1.5; }
+.container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+h1 { font-size: 4rem; font-weight: 700; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; margin-bottom: 0.5rem; }
+h1 .emoji { font-size: 3.5rem; }
+.tagline { font-size: 1.5rem; color: var(--smoke); margin-bottom: 3rem; }
+.hero { padding: 6rem 0 3rem; }
+.install-box { background: var(--basalt); border-left: 4px solid var(--lava); padding: 1.5rem 2rem; border-radius: 4px; margin-bottom: 3rem; }
+.install-box code { font-size: 1.2rem; color: var(--lava); word-break: break-all; }
+.install-box p { color: var(--smoke); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.cave { display: flex; gap: 2rem; margin: 4rem 0; padding: 2rem 0; border-top: 1px solid var(--basalt); border-bottom: 1px solid var(--basalt); }
+.cave div { flex: 1; }
+.cave h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--smoke); margin-bottom: 1rem; }
+.cave ul { list-style: none; }
+.cave li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; font-size: 0.95rem; color: var(--ash); }
+.cave li::before { content: '→'; position: absolute; left: 0; color: var(--lava); }
+.features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 4rem 0; }
+.feature { background: var(--basalt); border-radius: 4px; padding: 1.5rem; font-size: 0.9rem; }
+.feature h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; color: var(--lava); }
+.feature p { color: var(--ash); line-height: 1.6; }
+.slop-table { width: 100%; border-collapse: collapse; margin: 3rem 0; font-size: 0.85rem; }
+.slop-table th { text-align: left; padding: 0.75rem 1rem; border-bottom: 2px solid var(--lava); color: var(--smoke); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 400; font-size: 0.75rem; }
+.slop-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--basalt); color: var(--ash); }
+.slop-table td:last-child { color: var(--smoke); }
+.checklist { background: var(--basalt); border-radius: 4px; padding: 2rem; margin: 3rem 0; }
+.checklist h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lava); margin-bottom: 1.5rem; }
+.checklist-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--ash); font-size: 0.9rem; }
+.checklist-item .box { width: 18px; height: 18px; border: 2px solid var(--lava); border-radius: 2px; flex-shrink: 0; }
+.platforms { margin: 3rem 0; padding: 2rem 0; border-top: 1px solid var(--basalt); }
+.platforms h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--smoke); margin-bottom: 1rem; }
+.platforms .tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.platforms .tag { background: var(--basalt); padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.8rem; color: var(--ash); }
+footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--basalt); text-align: center; color: var(--smoke); font-size: 0.8rem; }
+footer a { color: var(--lava); }
+@media (max-width: 600px) {
+  h1 { font-size: 2.5rem; }
+  .features { grid-template-columns: 1fr; }
+  .cave { flex-direction: column; gap: 1.5rem; }
+  .container { padding: 1rem; }
+  .hero { padding: 3rem 0 1.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1><span class="emoji">🗿</span> CHUNGUS</h1>
+    <div class="tagline">Coding god mode. One install. Works everywhere.</div>
+    <div class="install-box">
+      <p>Install in any project</p>
+      <code>npx skills add oatmealyn-creator/chungus-skills</code>
+    </div>
+  </div>
+
+  <div class="cave">
+    <div>
+      <h2>CHUNGUS SEE</h2>
+      <ul>
+        <li>Bad code</li>
+        <li>AI slop</li>
+        <li>Bloated bundles</li>
+        <li>Card inside card inside card</li>
+        <li>Ship without check</li>
+      </ul>
+    </div>
+    <div>
+      <h2>CHUNGUS FIX</h2>
+      <ul>
+        <li>Write minimum code</li>
+        <li>Delete over addition</li>
+        <li>Root cause over symptom</li>
+        <li>Parallel over sequential</li>
+        <li>Verify before ship</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Zero Commands</h3>
+      <p>AI auto-triggers from SKILL.md. No /commands to remember. Phase 1 always active. Phase 2 on code. Phase 3 before ship.</p>
+    </div>
+    <div class="feature">
+      <h3>40+ Anti-Slop Detectors</h3>
+      <p>Never see Inter font, purple gradients, glassmorphism, cream bg, bounce easing, nested cards, hero templates, gradient text again.</p>
+    </div>
+    <div class="feature">
+      <h3>70 React Perf Rules</h3>
+      <p>Vercel Engineering rules: waterfalls → bundle → server → client → re-render. Your React/Next.js apps ship fast.</p>
+    </div>
+    <div class="feature">
+      <h3>7-Step Prelaunch Audit</h3>
+      <p>Vibe check → analytics → payments (both directions) → kill DB → API bypass test → blocking check → legal compliance.</p>
+    </div>
+    <div class="feature">
+      <h3>TDD Built In</h3>
+      <p>Red → green → refactor. One vertical slice at a time. TODO checklist tracks every step. Never ship untested.</p>
+    </div>
+    <div class="feature">
+      <h3>Security Audit</h3>
+      <p>Supabase RLS, SQL injection, XSS, secrets leak, auth bypass detection. Every endpoint verified before deploy.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--smoke);margin-bottom:1.5rem">AI slop your AI will never write again</h2>
+  <table class="slop-table">
+    <thead>
+      <tr><th>Slop</th><th>What You Get Instead</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Inter font as default</td><td>Deliberate typeface per project</td></tr>
+      <tr><td>Purple-to-blue gradient</td><td>Single solid color or brand palette</td></tr>
+      <tr><td>Cream/beige background</td><td>True off-white or brand color</td></tr>
+      <tr><td>Cards inside cards inside cards</td><td>One card level maximum</td></tr>
+      <tr><td>Glassmorphism everywhere</td><td>Rare and purposeful, or nothing</td></tr>
+      <tr><td>01 · About / 02 · Process</td><td>Only if content is actually sequential</td></tr>
+      <tr><td>border-radius: 40px</td><td>12-16px max. Pill only for tags.</td></tr>
+      <tr><td>Gradient text (background-clip)</td><td>Single solid color. Weight for emphasis.</td></tr>
+      <tr><td>Bounce/elastic easing</td><td>ease-out-quart or exponential</td></tr>
+      <tr><td>Side-stripe border on cards</td><td>Full border or background tint or nothing</td></tr>
+    </tbody>
+  </table>
+
+  <div class="checklist">
+    <h2>📋 Before Every Ship</h2>
+    <div class="checklist-item"><div class="box"></div> STEP 1 — Vibe-coding self-check</div>
+    <div class="checklist-item"><div class="box"></div> STEP 2 — Analytics (Umami or Supabase)</div>
+    <div class="checklist-item"><div class="box"></div> STEP 3 — Payment flow — SUCCESS + FAILURE both tested</div>
+    <div class="checklist-item"><div class="box"></div> STEP 4 — Break it — kill DB, check for stack trace leaks</div>
+    <div class="checklist-item"><div class="box"></div> STEP 5 — API auth bypass — hit endpoints without token</div>
+    <div class="checklist-item"><div class="box"></div> STEP 6 — Blocking behavior — connection pooling? concurrent?</div>
+    <div class="checklist-item"><div class="box"></div> STEP 7 — Legal — Privacy Policy, CalOPPA, COPPA, GDPR, Terms</div>
+  </div>
+
+  <div class="platforms">
+    <h2>Works on 62 agents</h2>
+    <div class="tags">
+      <span class="tag">Claude Code</span>
+      <span class="tag">Cursor</span>
+      <span class="tag">Windsurf</span>
+      <span class="tag">Cline</span>
+      <span class="tag">GitHub Copilot</span>
+      <span class="tag">Gemini CLI</span>
+      <span class="tag">OpenCode</span>
+      <span class="tag">Codex CLI</span>
+      <span class="tag">Aider</span>
+      <span class="tag">Augment</span>
+      <span class="tag">Continue</span>
+      <span class="tag">Goose</span>
+      <span class="tag">Replit</span>
+      <span class="tag">Zed</span>
+      <span class="tag">Trae</span>
+      <span class="tag">Kiro CLI</span>
+      <span class="tag">Antigravity CLI</span>
+      <span class="tag">Roo</span>
+      <span class="tag">Pi</span>
+      <span class="tag">+43 more</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>MIT — free like big mammoth on open plain.</p>
+    <p>Built by <a href="https://github.com/oatmealyn-creator">oatmealyn-creator</a></p>
+  </footer>
+</div>
+</body>
+</html>

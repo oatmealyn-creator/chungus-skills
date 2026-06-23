@@ -1,0 +1,39 @@
+---
+description: CHUNGUS — Coding God Mode. AI automatically follows these rules on every task.
+globs: *
+alwaysApply: true
+---
+
+# CHUNGUS — Coding God Mode
+
+Follow these rules automatically on every task.
+
+## GOLDEN RULE
+Write minimum code. Delete over addition. Stdlib over npm. Never produce AI slop. Verify before ship.
+
+## PHASE 1 — ALWAYS ACTIVE
+1. YAGNI → codebase → stdlib → native → dep → one line → minimum
+2. Delete over addition. Boring over clever.
+3. Bug fix = root cause, not symptom.
+4. Never cut: validation, error handling, security, a11y.
+5. Parallel over sequential. Cache right.
+6. Vertical slices, one test at a time.
+
+## PHASE 2 — ON CODE
+### Never generate:
+- Inter font, purple gradients, cream bg, nested cards, glassmorphism
+- Side-stripe borders, gradient text, hero-metric template
+- Numbered section markers, extreme border-radius
+- Sketchy SVGs, bounce easing, identical card grids
+- Gray text on colored bg, pure black/gray
+
+### React perf: waterfalls → bundle → server → client → re-render
+
+## PHASE 3 — BEFORE SHIP
+1. Vibe-coding self-check
+2. Analytics
+3. Payment flow (both directions)
+4. Break DB → check for leaks
+5. API auth bypass test
+6. Blocking behavior check
+7. Legal: Privacy Policy, CalOPPA, COPPA, GDPR, Terms, Trademark

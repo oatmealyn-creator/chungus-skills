@@ -1,0 +1,6 @@
+{
+  "name": "chungus",
+  "description": "CHUNGUS — Coding God Mode. AI automatically follows coding best practices, avoids AI slop, and runs prelaunch audits before every deploy.",
+  "skills": ["skills/chungus/SKILL.md"],
+  "alwaysApply": true
+}
