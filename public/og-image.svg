@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#0f0f1a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#e04e1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <g opacity="0.03" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="100" y1="0" x2="100" y2="630"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="500" y1="0" x2="500" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="700" y1="0" x2="700" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+    <line x1="1100" y1="0" x2="1100" y2="630"/>
+  </g>
+  <!-- Moai icon -->
+  <g transform="translate(80, 115) scale(1.8)">
+    <path d="M30 0h60v40c0 22-12 40-30 40S30 62 30 40V0z" fill="#161616" stroke="#ff6b35" stroke-width="2"/>
+    <rect x="38" y="18" width="14" height="14" rx="3" fill="#ff6b35"/>
+    <rect x="68" y="18" width="14" height="14" rx="3" fill="#ff6b35"/>
+    <rect x="40" y="46" width="40" height="6" rx="2" fill="#ff6b35"/>
+  </g>
+  <!-- Main title -->
+  <text x="280" y="200" font-family="'Courier New',monospace" font-size="72" font-weight="bold" fill="#ff6b35" letter-spacing="-2">CHUNGUS</text>
+  <text x="280" y="250" font-family="'Courier New',monospace" font-size="28" fill="#666" letter-spacing="4">CODING GOD MODE</text>
+  <!-- Subtitle -->
+  <text x="280" y="320" font-family="'Courier New',monospace" font-size="22" fill="#888">
+    <tspan x="280" dy="0">One install. AI writes minimum code, avoids slop,</tspan>
+    <tspan x="280" dy="32">optimizes React, self-heals containers, runs prelaunch audits.</tspan>
+  </text>
+  <!-- Features row -->
+  <g transform="translate(80, 440)">
+    <rect x="0" y="0" width="230" height="90" rx="8" fill="#1a1a2e" stroke="#ff6b35" stroke-width="1.5"/>
+    <text x="20" y="30" font-family="'Courier New',monospace" font-size="14" fill="#ff6b35" font-weight="bold">> ZERO COMMANDS</text>
+    <text x="20" y="54" font-family="'Courier New',monospace" font-size="13" fill="#777">Auto-triggers from SKILL.md</text>
+    <text x="20" y="74" font-family="'Courier New',monospace" font-size="13" fill="#777">4 phases, no manual setup</text>
+
+    <rect x="260" y="0" width="230" height="90" rx="8" fill="#1a1a2e" stroke="#ff6b35" stroke-width="1.5"/>
+    <text x="280" y="30" font-family="'Courier New',monospace" font-size="14" fill="#ff6b35" font-weight="bold">> 72 AGENTS</text>
+    <text x="280" y="54" font-family="'Courier New',monospace" font-size="13" fill="#777">Claude Code, Cursor, Copilot,</text>
+    <text x="280" y="74" font-family="'Courier New',monospace" font-size="13" fill="#777">Windsurf, Gemini, OpenCode + more</text>
+
+    <rect x="520" y="0" width="230" height="90" rx="8" fill="#1a1a2e" stroke="#ff6b35" stroke-width="1.5"/>
+    <text x="540" y="30" font-family="'Courier New',monospace" font-size="14" fill="#ff6b35" font-weight="bold">> 40+ ANTI-SLOP</text>
+    <text x="540" y="54" font-family="'Courier New',monospace" font-size="13" fill="#777">No Inter font, no purple gradients</text>
+    <text x="540" y="74" font-family="'Courier New',monospace" font-size="13" fill="#777">no glassmorphism, no cream bg</text>
+
+    <rect x="780" y="0" width="230" height="90" rx="8" fill="#1a1a2e" stroke="#ff6b35" stroke-width="1.5"/>
+    <text x="800" y="30" font-family="'Courier New',monospace" font-size="14" fill="#ff6b35" font-weight="bold">> SHIP SAFE</text>
+    <text x="800" y="54" font-family="'Courier New',monospace" font-size="13" fill="#777">8-step prelaunch audit</text>
+    <text x="800" y="74" font-family="'Courier New',monospace" font-size="13" fill="#777">Container self-healing</text>
+  </g>
+  <!-- Install tag at bottom -->
+  <rect x="80" y="560" width="300" height="36" rx="6" fill="#ff6b35" opacity="0.1"/>
+  <text x="90" y="584" font-family="'Courier New',monospace" font-size="16" fill="#ff6b35">npx skills add oatmealyn-creator/chungus-skills</text>
+  <!-- URL -->
+  <text x="1000" y="584" font-family="'Courier New',monospace" font-size="14" fill="#555">chungus-skills.vercel.app</text>
+</svg>

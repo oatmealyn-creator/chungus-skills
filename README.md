@@ -1,13 +1,30 @@
-# 🗿 CHUNGUS SKILLS
+<p align="center">
+  <img src="./logo.svg" width="120" height="120" alt="CHUNGUS">
+</p>
 
-**One install. AI becomes coding god.**
+<h1 align="center">🗿 CHUNGUS SKILLS</h1>
+<p align="center"><strong>One install. AI becomes coding god.</strong></p>
 
-[![skills.sh](https://skills.sh/b/oatmealyn-creator/chungus-skills)](https://skills.sh/oatmealyn-creator/chungus-skills) [🌐 Landing Page](https://chungus-skills.vercel.app)
+<p align="center">
+  <a href="https://skills.sh/oatmealyn-creator/chungus-skills">
+    <img src="https://skills.sh/b/oatmealyn-creator/chungus-skills" alt="skills.sh">
+  </a>
+  <a href="https://chungus-skills.vercel.app">
+    <img src="https://img.shields.io/badge/🌐-Landing%20Page-ff6b35?style=flat" alt="Landing Page">
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-ff6b35?style=flat" alt="MIT">
+  </a>
+  <img src="https://img.shields.io/badge/agents-72-ff6b35?style=flat" alt="72 agents">
+  <img src="https://img.shields.io/badge/version-1.1.0-ff6b35?style=flat" alt="v1.1.0">
+</p>
 
-CHUNGUS SEE BAD CODE. CHUNGUS FIX.
-CHUNGUS SEE SLOP. CHUNGUS REMOVE.
-CHUNGUS SEE SHIP WITHOUT CHECK. CHUNGUS STOP.
-CHUNGUS SEE CONTAINER DIE. CHUNGUS BRING BACK.
+<pre align="center">
+CHUNGUS SEE BAD CODE.  CHUNGUS FIX.
+CHUNGUS SEE SLOP.      CHUNGUS REMOVE.
+CHUNGUS SEE SHIP WITHOUT CHECK.  CHUNGUS STOP.
+CHUNGUS SEE CONTAINER DIE.  CHUNGUS BRING BACK.
+</pre>
 
 ---
 
@@ -37,7 +54,16 @@ npx skills add oatmealyn-creator/chungus-skills
 
 That's it. AI loads chungus. AI becomes coding god.
 
-Works on **72 agents**: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot, Gemini CLI, OpenCode, Codex CLI, and 64 more.
+| Agent | Support | Agent | Support |
+|-------|---------|-------|---------|
+| Claude Code | ✅ | Cursor | ✅ |
+| Windsurf | ✅ | Cline | ✅ |
+| GitHub Copilot | ✅ | Gemini CLI | ✅ |
+| OpenCode | ✅ | Codex CLI | ✅ |
+| Aider | ✅ | Augment | ✅ |
+| Continue | ✅ | Goose | ✅ |
+
+Works on **72 agents total**.
 
 ---
 

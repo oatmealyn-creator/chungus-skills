@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#e04e1a"/>
+    </linearGradient>
+    <linearGradient id="gbg" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="256" height="256" rx="48" fill="url(#gbg)"/>
+  <!-- Head silhouette -->
+  <path d="M68 52h120v80c0 44-24 80-60 80s-60-36-60-80V52z" fill="#161616" stroke="url(#g)" stroke-width="4"/>
+  <!-- Eyes -->
+  <rect x="88" y="88" width="28" height="28" rx="6" fill="url(#g)"/>
+  <rect x="140" y="88" width="28" height="28" rx="6" fill="url(#g)"/>
+  <!-- Mouth -->
+  <rect x="90" y="146" width="76" height="12" rx="4" fill="url(#g)"/>
+  <!-- Chisel lines -->
+  <line x1="128" y1="52" x2="128" y2="36" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="98" y1="58" x2="88" y2="44" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="158" y1="58" x2="168" y2="44" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Cracks -->
+  <path d="M48 140l12 8M208 140l-12 8" stroke="url(#g)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M60 180l8-12M196 180l-8-12" stroke="url(#g)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+</svg>
