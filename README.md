@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.svg" width="120" height="120" alt="CHUNGUS">
+  <img src="./public/logo.svg" width="120" height="120" alt="CHUNGUS">
 </p>
 
 <h1 align="center">🗿 CHUNGUS SKILLS</h1>
