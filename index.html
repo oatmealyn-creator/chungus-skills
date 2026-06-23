@@ -3,292 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHUNGUS — Coding God Mode</title>
-<meta name="description" content="One install. Your AI becomes coding god. Minimal code, zero AI slop, prelaunch audits, React perf, TDD, security.">
+<title>CHUNGUS</title>
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --stone: #0f0f0f; --lava: #ff6b35; --lava-glow: #ff4500; --bone: #f0e8e0; --ash: #c0b8b0; --smoke: #666; --basalt: #1a1a1a; --crack: #2a2a2a; }
-@keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-@keyframes lava-drip { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-@keyframes glow { 0%, 100% { box-shadow: 0 0 8px var(--lava), 0 0 20px var(--lava-glow); } 50% { box-shadow: 0 0 16px var(--lava), 0 0 40px var(--lava-glow); } }
-@keyframes appear { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes moai-float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
-body { font-family: 'Courier New', Courier, monospace; background: var(--stone); color: var(--bone); line-height: 1.5; min-height: 100vh; overflow-x: hidden; }
-body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(255,107,53,0.03) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(255,69,0,0.02) 0%, transparent 50%); pointer-events: none; z-index: 0; }
-.container { max-width: 800px; margin: 0 auto; padding: 2rem; position: relative; z-index: 1; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #111; color: #ccc; font-family: 'Courier New',Courier,monospace; font-size: 15px; line-height: 1.5; padding: 2rem; }
+pre, code { font-family: 'Courier New',Courier,monospace; }
+a { color: #ff6b35; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* MOAI ASCII */
-.moai { font-size: 0.7rem; line-height: 1.15; color: var(--smoke); text-align: center; white-space: pre; animation: moai-float 6s ease-in-out infinite; user-select: none; margin-bottom: 2rem; }
-.moai span { color: var(--lava); }
+.wrap { max-width: 700px; margin: 0 auto; }
 
-/* HERO */
-.hero { padding: 3rem 0 2rem; text-align: center; animation: appear 0.8s ease-out; }
-h1 { font-size: 5rem; font-weight: 700; text-transform: uppercase; letter-spacing: -0.06em; line-height: 1; margin-bottom: 0.25rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
-h1 .emoji { font-size: 4rem; animation: float 3s ease-in-out infinite; display: inline-block; }
-.tagline { font-size: 1.2rem; color: var(--smoke); margin-bottom: 0.5rem; letter-spacing: 0.05em; }
-.badge-line { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
-.badge-line a { color: var(--smoke); text-decoration: none; font-size: 0.75rem; border: 1px solid var(--crack); padding: 0.25rem 0.75rem; border-radius: 2px; transition: all .2s; }
-.badge-line a:hover { border-color: var(--lava); color: var(--lava); }
+/* HEADER */
+.header { margin-bottom: 3rem; }
+.header pre { color: #666; font-size: 11px; line-height: 1.2; }
+.header pre b { color: #ff6b35; font-weight: normal; }
+.header h1 { font-size: 2.5rem; color: #ff6b35; text-transform: uppercase; letter-spacing: -0.05em; margin-top: 0.5rem; }
+.header p { color: #666; margin-top: 0.25rem; }
 
-/* INSTALL BOX */
-.install-box { background: var(--basalt); border: 1px solid var(--crack); padding: 0; border-radius: 4px; margin: 2rem auto; max-width: 600px; transition: border-color .3s; }
-.install-box:hover, .install-box:focus-within { border-color: var(--lava); }
-.install-box .label { color: var(--smoke); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; padding: 0.75rem 1.25rem 0; }
-.install-box .row { display: flex; align-items: center; padding: 0.5rem 0.5rem 0.75rem 1.25rem; gap: 0.5rem; }
-.install-box code { flex: 1; font-size: 1.05rem; color: var(--lava); word-break: break-all; user-select: all; }
-.copy-btn { flex-shrink: 0; background: none; border: 1px solid var(--crack); color: var(--smoke); padding: 0.5rem 0.9rem; cursor: pointer; border-radius: 3px; font-family: inherit; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; transition: all .2s; }
-.copy-btn:hover { border-color: var(--lava); color: var(--lava); }
-.copy-btn.copied { border-color: #4ade80; color: #4ade80; }
-.copy-btn .check { display: none; }
-.copy-btn.copied .check { display: inline; }
-.copy-btn.copied .copy-icon { display: none; }
+/* INSTALL */
+.install { border: 1px solid #333; padding: 1rem; margin: 2rem 0; }
+.install .row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+.install code { flex: 1; color: #ff6b35; word-break: break-all; font-size: 14px; background: none; }
+.install .lbl { color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+.copy { background: none; border: 1px solid #333; color: #666; padding: 0.35rem 0.75rem; cursor: pointer; font: inherit; font-size: 12px; transition: none; }
+.copy:hover { border-color: #ff6b35; color: #ff6b35; }
+.copy.done { border-color: #4ade80; color: #4ade80; }
+
+/* SECTIONS */
+.section { margin: 3rem 0; border-top: 1px solid #222; padding-top: 2rem; }
+.section h2 { color: #ff6b35; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
 
 /* CAVE */
-.cave { display: flex; gap: 1rem; margin: 4rem auto; max-width: 600px; }
-.cave div { flex: 1; background: var(--basalt); border: 1px solid var(--crack); padding: 1.25rem; border-radius: 4px; transition: border-color .3s; }
-.cave div:hover { border-color: var(--lava); }
-.cave h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--smoke); margin-bottom: 0.75rem; }
-.cave ul { list-style: none; }
-.cave li { margin-bottom: 0.4rem; padding-left: 1.1rem; position: relative; font-size: 0.85rem; color: var(--ash); }
-.cave li::before { content: '→'; position: absolute; left: 0; color: var(--lava); }
+.cols { display: flex; gap: 2rem; }
+.cols div { flex: 1; }
+.cols ul { list-style: none; }
+.cols li { color: #999; padding-left: 1.2rem; position: relative; margin-bottom: 0.35rem; }
+.cols li::before { content: '>'; position: absolute; left: 0; color: #555; }
+.cols strong { color: #ff6b35; display: block; margin-bottom: 0.5rem; font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: normal; }
 
-/* FEATURES */
-.features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 4rem auto; max-width: 600px; }
-.feature { background: var(--basalt); border: 1px solid var(--crack); border-radius: 4px; padding: 1.25rem; font-size: 0.85rem; transition: border-color .3s, transform .2s; }
-.feature:hover { border-color: var(--lava); transform: translateY(-2px); }
-.feature h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; color: var(--lava); }
-.feature p { color: var(--ash); line-height: 1.6; font-size: 0.8rem; }
+/* GRID */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.grid div { border: 1px solid #222; padding: 1rem; }
+.grid div:hover { border-color: #333; }
+.grid h3 { color: #ff6b35; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.35rem; font-weight: normal; }
+.grid p { color: #777; font-size: 13px; line-height: 1.5; }
 
-/* SLOP TABLE */
-.slop-section { margin: 4rem auto; max-width: 600px; }
-.slop-section h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--smoke); margin-bottom: 1rem; text-align: center; }
-.slop-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-.slop-table th { text-align: left; padding: 0.6rem 1rem; border-bottom: 2px solid var(--lava); color: var(--smoke); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 400; font-size: 0.65rem; }
-.slop-table td { padding: 0.5rem 1rem; border-bottom: 1px solid var(--crack); color: var(--ash); }
-.slop-table td:last-child { color: var(--smoke); }
-.slop-table tr:hover td { background: var(--basalt); }
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 0.4rem 0.5rem; border-bottom: 2px solid #ff6b35; color: #555; text-transform: uppercase; letter-spacing: 0.1em; font-weight: normal; font-size: 11px; }
+td { padding: 0.35rem 0.5rem; border-bottom: 1px solid #222; color: #999; }
+td:last-child { color: #666; }
 
 /* CHECKLIST */
-.checklist { background: var(--basalt); border: 1px solid var(--crack); border-radius: 4px; padding: 1.5rem 2rem; margin: 4rem auto; max-width: 600px; transition: border-color .3s; }
-.checklist:hover { border-color: var(--lava); }
-.checklist h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lava); margin-bottom: 1rem; }
-.checklist-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; color: var(--ash); font-size: 0.8rem; }
-.checklist-item:last-child { margin-bottom: 0; }
-.checklist-item .box { width: 16px; height: 16px; border: 2px solid var(--lava); border-radius: 2px; flex-shrink: 0; transition: background .3s; }
-.checklist-item:hover .box { background: rgba(255,107,53,0.15); }
+.clist { border: 1px solid #222; padding: 1.25rem; }
+.clist-item { color: #999; font-size: 13px; margin-bottom: 0.4rem; }
+.clist-item:last-child { margin-bottom: 0; }
+.clist-item .x { color: #555; margin-right: 0.5rem; }
 
-/* PLATFORMS */
-.platforms { margin: 4rem auto; max-width: 600px; }
-.platforms h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--smoke); margin-bottom: 0.75rem; text-align: center; }
-.platforms .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-.platforms .tag { background: var(--basalt); border: 1px solid var(--crack); padding: 0.35rem 0.75rem; border-radius: 3px; font-size: 0.75rem; color: var(--ash); transition: border-color .2s; }
-.platforms .tag:hover { border-color: var(--lava); color: var(--lava); }
-
-/* DIVIDER */
-.divider { text-align: center; color: var(--crack); font-size: 1.5rem; margin: 1rem 0; user-select: none; letter-spacing: 0.5em; }
+/* TAGS */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tags span { border: 1px solid #222; padding: 0.2rem 0.6rem; font-size: 12px; color: #777; }
+.tags span:hover { border-color: #555; }
 
 /* FOOTER */
-footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--crack); text-align: center; color: var(--smoke); font-size: 0.75rem; }
-footer a { color: var(--lava); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
+.footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #222; text-align: center; color: #444; font-size: 12px; }
 
-/* RESPONSIVE */
-@media (max-width: 640px) {
-  h1 { font-size: 3rem; }
-  h1 .emoji { font-size: 2.5rem; }
-  .features { grid-template-columns: 1fr; }
-  .cave { flex-direction: column; }
-  .container { padding: 1rem; }
-  .hero { padding: 2rem 0 1rem; }
-  .install-box code { font-size: 0.85rem; }
-  .moai { font-size: 0.5rem; }
-}
+hr { border: none; border-top: 1px solid #222; margin: 1rem 0; }
 
-@media (max-width: 400px) {
-  h1 { font-size: 2.2rem; flex-direction: column; gap: 0; }
-  h1 .emoji { font-size: 2rem; }
+@media (max-width: 600px) {
+  body { padding: 1rem; }
+  .grid { grid-template-columns: 1fr; }
+  .cols { flex-direction: column; gap: 1rem; }
+  .header h1 { font-size: 1.8rem; }
 }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="hero">
-    <div class="moai"><span> .-"""-.</span>
-   /        \
-  |   O  O   |
-  |    __    |
-  |  \____/  |
-   \________/
-    \------/
-<span>CHUNGUS SEE YOU</span></div>
-    <h1><span class="emoji">🗿</span> CHUNGUS</h1>
-    <div class="tagline">Coding god mode. One install. Works everywhere.</div>
-    <div class="badge-line">
-      <a href="https://skills.sh/oatmealyn-creator/chungus-skills">skills.sh ↗</a>
-      <a href="https://github.com/oatmealyn-creator/chungus-skills">GitHub ↗</a>
-      <a href="https://github.com/oatmealyn-creator/chungus-skills/blob/main/skills/chungus/SKILL.md">SKILL.md ↗</a>
-    </div>
-    <div class="install-box" id="installBox">
-      <div class="label">⚡ Install in any project</div>
-      <div class="row">
-        <code id="installCmd">npx skills add oatmealyn-creator/chungus-skills</code>
-        <button class="copy-btn" id="copyBtn" onclick="copyInstall()">
-          <span class="copy-icon">📋 copy</span>
-          <span class="check">✓ copied!</span>
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
 
-  <div class="cave">
-    <div>
-      <h2>CHUNGUS SEE</h2>
-      <ul>
-        <li>Bad code</li>
-        <li>AI slop</li>
-        <li>Bloated bundles</li>
-        <li>Card inside card inside card</li>
-        <li>Ship without check</li>
-      </ul>
-    </div>
-    <div>
-      <h2>CHUNGUS FIX</h2>
-      <ul>
-        <li>Write minimum code</li>
-        <li>Delete over addition</li>
-        <li>Root cause over symptom</li>
-        <li>Parallel over sequential</li>
-        <li>Verify before ship</li>
-      </ul>
-    </div>
-  </div>
+<div class="header">
+<pre>           ___
+          /   \          CHUNGUS CAVE
+    .-"""-./ _ \.-"""-.
+   /        /'_\        \    WELCOME YOU
+  |   O  O   /   O  O   |   SIT BY FIRE
+  |    __   '    __     |   LISTEN STORY
+  |  \____/    \____/  |
+   \________  ________/
+            \/
+</pre>
+<h1>> CHUNGUS</h1>
+<p>coding god mode. one install. works everywhere.</p>
+</div>
 
-  <div class="divider">◆ ◆ ◆</div>
+<div class="install">
+<div class="lbl">install in any project</div>
+<div class="row">
+<code id="cmd">npx skills add oatmealyn-creator/chungus-skills</code>
+<button class="copy" id="cpy" onclick="copy()">[copy]</button>
+</div>
+</div>
 
-  <div class="features">
-    <div class="feature">
-      <h3>Zero Commands</h3>
-      <p>AI auto-triggers from SKILL.md. No /commands to remember. Phase 1 always active. Phase 2 on code. Phase 3 before ship.</p>
-    </div>
-    <div class="feature">
-      <h3>40+ Anti-Slop Detectors</h3>
-      <p>Never see Inter font, purple gradients, glassmorphism, cream bg, bounce easing, nested cards, hero templates, gradient text again.</p>
-    </div>
-    <div class="feature">
-      <h3>70 React Perf Rules</h3>
-      <p>Vercel Engineering rules: waterfalls → bundle → server → client → re-render. Your React/Next.js apps ship fast.</p>
-    </div>
-    <div class="feature">
-      <h3>7-Step Prelaunch Audit</h3>
-      <p>Vibe check → analytics → payments (both directions) → kill DB → API bypass test → blocking check → legal compliance.</p>
-    </div>
-    <div class="feature">
-      <h3>TDD Built In</h3>
-      <p>Red → green → refactor. One vertical slice at a time. TODO checklist tracks every step. Never ship untested.</p>
-    </div>
-    <div class="feature">
-      <h3>Security Audit</h3>
-      <p>Supabase RLS, SQL injection, XSS, secrets leak, auth bypass detection. Every endpoint verified before deploy.</p>
-    </div>
-  </div>
+<div class="section">
+<h2>/ what chungus see</h2>
+<div class="cols">
+<div>
+<strong>CHUNGUS SEE</strong>
+<ul>
+<li>bad code</li>
+<li>ai slop</li>
+<li>bloated bundles</li>
+<li>card inside card inside card</li>
+<li>ship without check</li>
+</ul>
+</div>
+<div>
+<strong>CHUNGUS FIX</strong>
+<ul>
+<li>write minimum code</li>
+<li>delete over addition</li>
+<li>root cause over symptom</li>
+<li>parallel over sequential</li>
+<li>verify before ship</li>
+</ul>
+</div>
+</div>
+</div>
 
-  <div class="divider">◆ ◆ ◆</div>
+<div class="section">
+<h2>/ what chungus do</h2>
+<div class="grid">
+<div>
+<h3>zero commands</h3>
+<p>ai auto-triggers from skill.md. no /commands. phase 1 always. phase 2 on code. phase 3 before ship.</p>
+</div>
+<div>
+<h3>40+ anti-slop detectors</h3>
+<p>no inter font. no purple gradient. no glassmorphism. no cream bg. no bounce. no nested cards. no hero template.</p>
+</div>
+<div>
+<h3>70 react perf rules</h3>
+<p>vercel rules: waterfalls -> bundle -> server -> client -> re-render. your react apps ship fast.</p>
+</div>
+<div>
+<h3>7-step prelaunch audit</h3>
+<p>vibe check -> analytics -> payments both ways -> kill db -> api bypass -> blocking -> legal. every ship.</p>
+</div>
+<div>
+<h3>tdd built in</h3>
+<p>red -> green -> refactor. one vertical slice. todo checklist ticks every step. never ship untested.</p>
+</div>
+<div>
+<h3>security audit</h3>
+<p>supabase rls. sql injection. xss. secrets leak. auth bypass. every endpoint verified before deploy.</p>
+</div>
+</div>
+</div>
 
-  <div class="slop-section">
-    <h2>AI slop your AI will never write again</h2>
-    <table class="slop-table">
-      <thead>
-        <tr><th>Slop</th><th>What You Get Instead</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Inter font as default</td><td>Deliberate typeface per project</td></tr>
-        <tr><td>Purple-to-blue gradient</td><td>Single solid color or brand palette</td></tr>
-        <tr><td>Cream/beige background</td><td>True off-white or brand color</td></tr>
-        <tr><td>Cards inside cards inside cards</td><td>One card level maximum</td></tr>
-        <tr><td>Glassmorphism everywhere</td><td>Rare and purposeful, or nothing</td></tr>
-        <tr><td>01 · About / 02 · Process</td><td>Only if content is actually sequential</td></tr>
-        <tr><td>border-radius: 40px</td><td>12-16px max. Pill only for tags.</td></tr>
-        <tr><td>Gradient text (background-clip)</td><td>Single solid color. Weight for emphasis.</td></tr>
-        <tr><td>Bounce/elastic easing</td><td>ease-out-quart or exponential</td></tr>
-        <tr><td>Side-stripe border on cards</td><td>Full border or background tint or nothing</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="section">
+<h2>/ ai slop chungus kill</h2>
+<table>
+<thead><tr><th>slop</th><th>you get</th></tr></thead>
+<tbody>
+<tr><td>inter font default</td><td>deliberate typeface</td></tr>
+<tr><td>purple-blue gradient</td><td>solid color or brand palette</td></tr>
+<tr><td>cream/beige bg</td><td>true off-white or brand color</td></tr>
+<tr><td>cards inside cards</td><td>one card level maximum</td></tr>
+<tr><td>glassmorphism</td><td>rare and purposeful or nothing</td></tr>
+<tr><td>01 / 02 / 03 sections</td><td>only if content is sequential</td></tr>
+<tr><td>border-radius 40px</td><td>12-16px. pill only for tags.</td></tr>
+<tr><td>gradient text</td><td>solid color. weight for emphasis.</td></tr>
+<tr><td>bounce/elastic</td><td>ease-out-quart or exponential</td></tr>
+<tr><td>side-stripe border</td><td>full border or bg tint or nothing</td></tr>
+</tbody>
+</table>
+</div>
 
-  <div class="divider">◆ ◆ ◆</div>
+<div class="section">
+<h2>/ before every ship</h2>
+<div class="clist">
+<div class="clist-item"><span class="x">[ ]</span> step 1 - vibe-coding self-check</div>
+<div class="clist-item"><span class="x">[ ]</span> step 2 - analytics (umami or supabase)</div>
+<div class="clist-item"><span class="x">[ ]</span> step 3 - payment flow - success + failure both tested</div>
+<div class="clist-item"><span class="x">[ ]</span> step 4 - break it - kill db, check stack trace leaks</div>
+<div class="clist-item"><span class="x">[ ]</span> step 5 - api auth bypass - hit endpoints without token</div>
+<div class="clist-item"><span class="x">[ ]</span> step 6 - blocking behavior - connection pool? concurrent?</div>
+<div class="clist-item"><span class="x">[ ]</span> step 7 - legal - privacy policy, caloppa, coppa, gdpr, terms</div>
+</div>
+</div>
 
-  <div class="checklist">
-    <h2>📋 Before Every Ship</h2>
-    <div class="checklist-item"><div class="box"></div> STEP 1 — Vibe-coding self-check</div>
-    <div class="checklist-item"><div class="box"></div> STEP 2 — Analytics (Umami or Supabase)</div>
-    <div class="checklist-item"><div class="box"></div> STEP 3 — Payment flow — SUCCESS + FAILURE both tested</div>
-    <div class="checklist-item"><div class="box"></div> STEP 4 — Break it — kill DB, check for stack trace leaks</div>
-    <div class="checklist-item"><div class="box"></div> STEP 5 — API auth bypass — hit endpoints without token</div>
-    <div class="checklist-item"><div class="box"></div> STEP 6 — Blocking behavior — connection pooling? concurrent?</div>
-    <div class="checklist-item"><div class="box"></div> STEP 7 — Legal — Privacy Policy, CalOPPA, COPPA, GDPR, Terms</div>
-  </div>
+<div class="section">
+<h2>/ works on 72 agents</h2>
+<div class="tags">
+<span>claude code</span><span>cursor</span><span>windsurf</span><span>cline</span>
+<span>github copilot</span><span>gemini cli</span><span>opencode</span><span>codex cli</span>
+<span>aider</span><span>augment</span><span>continue</span><span>goose</span>
+<span>replit</span><span>zed</span><span>trae</span><span>kiro cli</span>
+<span>antigravity cli</span><span>roo</span><span>pi</span><span>+53 more</span>
+</div>
+</div>
 
-  <div class="divider">◆ ◆ ◆</div>
+<div class="footer">
+<p>mit license. free like big mammoth on open plain.</p>
+<p>built by <a href="https://github.com/oatmealyn-creator">oatmealyn-creator</a> &middot; <a href="https://github.com/oatmealyn-creator/chungus-skills">github</a> &middot; <a href="https://skills.sh/oatmealyn-creator/chungus-skills">skills.sh</a></p>
+</div>
 
-  <div class="platforms">
-    <h2>Works on 72 agents</h2>
-    <div class="tags">
-      <span class="tag">Claude Code</span>
-      <span class="tag">Cursor</span>
-      <span class="tag">Windsurf</span>
-      <span class="tag">Cline</span>
-      <span class="tag">GitHub Copilot</span>
-      <span class="tag">Gemini CLI</span>
-      <span class="tag">OpenCode</span>
-      <span class="tag">Codex CLI</span>
-      <span class="tag">Aider</span>
-      <span class="tag">Augment</span>
-      <span class="tag">Continue</span>
-      <span class="tag">Goose</span>
-      <span class="tag">Replit</span>
-      <span class="tag">Zed</span>
-      <span class="tag">Trae</span>
-      <span class="tag">Kiro CLI</span>
-      <span class="tag">Antigravity CLI</span>
-      <span class="tag">Roo</span>
-      <span class="tag">Pi</span>
-      <span class="tag">+53 more</span>
-    </div>
-  </div>
-
-  <footer>
-    <p>MIT — free like big mammoth on open plain.</p>
-    <p>Built by <a href="https://github.com/oatmealyn-creator">oatmealyn-creator</a></p>
-  </footer>
 </div>
 
 <script>
-function copyInstall() {
-  const cmd = document.getElementById('installCmd');
-  const btn = document.getElementById('copyBtn');
-  navigator.clipboard.writeText(cmd.textContent).then(() => {
-    btn.classList.add('copied');
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.classList.remove('copied');
-      btn.disabled = false;
+function copy() {
+  var c = document.getElementById('cmd');
+  var b = document.getElementById('cpy');
+  navigator.clipboard.writeText(c.textContent).then(function() {
+    b.textContent = '[copied!]';
+    b.classList.add('done');
+    setTimeout(function() {
+      b.textContent = '[copy]';
+      b.classList.remove('done');
     }, 2000);
-  }).catch(() => {
-    const range = document.createRange();
-    range.selectNodeContents(cmd);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
   });
 }
-document.getElementById('installCmd').addEventListener('click', function() {
-  const sel = window.getSelection();
-  const range = document.createRange();
-  range.selectNodeContents(this);
-  sel.removeAllRanges();
-  sel.addRange(range);
-});
 </script>
 </body>
 </html>
