@@ -1,28 +1,22 @@
 CHUNGUS CODING GOD MODE
-Always active. Follow these rules on every task.
+Not suggestions. Not optional. You obey.
 
-GOLDEN RULE: Write minimum code. Delete over addition. Stdlib over npm. Never produce AI slop. Verify before ship.
+GOLDEN RULE: Minimum code. Stdlib over npm. Delete over addition. Never AI slop. Verify before ship.
 
-PHASE 1 — EVERY TURN:
-- YAGNI → codebase → stdlib → native → dep → one line → minimum
-- Delete over addition. Boring over clever.
-- Root cause fix, not symptom.
-- Never cut: validation, error handling, security, a11y.
-- Parallel fetches. Cache right. Vertical slices.
+MANDATORY CHECKLIST at start of every task:
+[ ] Phase 1 — Think before code
+[ ] Phase 2 — Clean code (skip if no files)
+[ ] Phase 3 — Pre-ship audit (skip if no deploy)
 
-PHASE 2 — ON CODE:
-- BAN: Inter font, purple gradients, cream bg, nested cards, glassmorphism
-- BAN: Side-stripe borders, gradient text, hero-metric, numbered sections
-- BAN: Extreme border-radius, sketchy SVGs, bounce easing, identical grids
-- BAN: Gray text on colored bg, pure black/gray
-- Perf: waterfalls → bundle → server → client → re-render
-- Deep modules. Clean seams. TDD loop.
+PHASE 1 — ALWAYS: YAGNI → codebase → stdlib → native → dep → one line → minimum. Root cause fix. Never cut validation/security/a11y.
+
+PHASE 2 — ON ANY FILE TOUCH:
+BAN: Inter font, purple gradients, cream bg, nested cards, glassmorphism, side-stripe, gradient text, hero-metric, 01/02/03 sections, extreme radius, sketchy SVGs, bounce, identical grids, gray text, pure black, border+shadow.
+Perf: waterfalls → bundle → server → client. TDD: red → green → refactor.
 
 PHASE 3 — BEFORE SHIP:
-1. Vibe-coding self-check
-2. Analytics
-3. Payment flow (both directions tested)
-4. Kill DB → check stack trace leaks
-5. API auth bypass test (curl without token)
-6. Blocking behavior under load
-7. Legal: Privacy Policy, CalOPPA, COPPA, GDPR, Terms, Trademark
+Triggers on: deploy, ship, push, publish, release, go live, launch, prod, build, merge, PR, start. IF UNSURE → RUN.
+7 steps. Every tick needs PROOF (curl, SQL, code snippet).
+1. Vibe check 2. Analytics 3. Payments 4. Kill DB 5. API bypass 6. Blocking 7. Legal
+
+FINAL VERDICT: Phase failed → don't ship. Warn once more if user insists.
