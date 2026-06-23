@@ -2,13 +2,12 @@
 name: chungus
 description: >
   CHUNGUS MAKE CODE GOOD. Triggers on EVERY message, EVERY task,
-  EVERY question. If user talks code, Phase 1 activates. If user
-  touches any file, Phase 2 activates. If user says deploy/ship/push/
-  release/launch/publish/go-live/prod/build/merge/PR/run/start,
-  Phase 3 activates. If user says docker/container/compose/k8s/
-  kubernetes/cluster/pod/orchestrate/restart/healthcheck
-  liveness/readiness/probe/self-heal/watch/monitor/resiliency,
-  Phase 4 also activates.
+  EVERY question. Phase 1 always runs on any code talk. Phase 2 runs
+  when any file is touched. Phase 3 runs when user says deploy/ship/
+  push/release/launch/publish/go-live/prod/build/merge/PR/run/start.
+  Phase 4 runs when user says docker, container, compose, k8s,
+  kubernetes, cluster, pod, orchestrate, restart, health check,
+  liveness, readiness, probe, self-heal, watch, monitor, resiliency.
   IF UNSURE, RUN ALL FOUR. CHUNGUS IS ALWAYS WATCHING.
   CHUNGUS NEVER SLEEPS. CHUNGUS NEVER FORGETS.
 ---
@@ -58,6 +57,13 @@ Every `[x]` must have proof below it.
 # PHASE 1 — ALWAYS ACTIVE (CONTEXT-PROOF)
 *Runs every turn. Cannot be evicted from context.*
 
+## SELF-CHECK — Before you think
+Stop. Ask yourself:
+- Do I actually understand the request, or am I filling in blanks from habit?
+- What assumption would make my first instinct completely wrong?
+- If I had to ask one question to confirm, what would it be?
+If uncertain → ask ONE question. Wait for answer. No ladder yet.
+
 ## The 7-Rung Ladder (condensed)
 YAGNI → codebase → stdlib → platform native → installed dep → one line → minimum. Never skip rungs.
 
@@ -80,6 +86,13 @@ If any answer to the grilling questions is "no" or "unsure", ask ONE question. W
 create any file, delete any file, review any code, analyze any code,
 suggest any code change, or answer any code question.
 If code is involved, Phase 2 runs. No exceptions.*
+
+## SELF-CHECK — Before you write
+Stop. Ask yourself:
+- Is this code actually needed, or is there something I can delete instead?
+- Am I about to produce boilerplate because the rules tell me to, not because the project needs it?
+- If I wrote this and came back in a week, would I be proud or embarrassed?
+If the answer is "I'm following rules, not solving a problem" → stop and rethink.
 
 ## AI Slop Detectors — ABSOLUTE BANS
 Scan every file you touch. If you find any, fix before proceeding.
@@ -133,7 +146,7 @@ Scan every file you touch. If you find any, fix before proceeding.
 - **CRITICAL**: No barrel imports. Use `next/dynamic()` for heavy components. Defer third-party after hydration.
 - **HIGH**: `React.cache()` for dedup. LRU for cross-request. Minimize RSC serialization.
 - **MEDIUM**: SWR/TanStack Query. `React.memo` for expensive comps. `startTransition` for non-urgent updates.
-- **MEDIUM**: `content-visibility: auto` on lists. Hoist static JSX. `<Activity>` for show/hide.
+- **MEDIUM**: `content-visibility: auto` on lists. Hoist static JSX. `<details>` for show/hide.
 
 ## Architecture
 - **Deep modules**: lots of behavior behind small interface.
@@ -165,6 +178,13 @@ release it, push to prod, push to production.**
 False positive = 30 seconds wasted.
 False negative = production outage, angry users, legal liability.
 YOU ARE NOT ALLOWED TO SKIP PHASE 3 IF ANY OF THESE TRIGGER WORDS APPEAR.**
+
+## SELF-CHECK — Before you audit
+Stop. Ask yourself:
+- Does every step of this 8-step audit actually apply to this project?
+- For each step that doesn't apply: say why. Don't silently skip.
+- Am I generating checklists to satisfy the rules, or to genuinely protect the user?
+If a step doesn't fit → state clearly: "STEP X skipped — this project has no [feature]." Don't pretend.
 
 ## ⛔ CHUNGUS PRELAUNCH AUDIT
 
@@ -347,6 +367,13 @@ liveness, readiness, probe, self-heal, resiliency, HA.**
 
 **PHASE 4 EXISTS BECAUSE YOUR CODE BEING GOOD DOESN'T MATTER
 IF YOUR CONTAINER IS DEAD. CHUNGUS WATCHES. CHUNGUS BRINGS BACK.**
+
+## SELF-CHECK — Before you generate health configs
+Stop. Ask yourself:
+- Is this project actually containerized in production, or did I trigger on a common word?
+- If the user said "service", "restart", "watch", or "monitor" — is that about containers, or just everyday language?
+- Do I know for a fact this runs in Docker/K8s, or am I guessing?
+If not containerized → stop. Say: "Phase 4 skipped — this is not a container deployment." Do not generate example configs.
 
 ## Container Health Rules
 

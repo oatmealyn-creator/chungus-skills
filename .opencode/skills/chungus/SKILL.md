@@ -38,6 +38,9 @@ Every `[x]` must have proof below it.
 # PHASE 1 — ALWAYS ACTIVE (CONTEXT-PROOF)
 *Runs every turn. Cannot be evicted from context.*
 
+## SELF-CHECK — Before you think
+Stop. Ask yourself: Do I understand this or am I filling in blanks? What assumption would make me wrong? If uncertain → ask one question first.
+
 ## The 7-Rung Ladder (condensed)
 YAGNI → codebase → stdlib → platform native → installed dep → one line → minimum. Never skip rungs.
 
@@ -54,6 +57,9 @@ YAGNI → codebase → stdlib → platform native → installed dep → one line
 ---
 
 # PHASE 2 — ON CODE (TRIGGER ON ANY FILE TOUCH)
+
+## SELF-CHECK — Before you write
+Stop. Ask yourself: Is this code needed or can I delete? Am I producing boilerplate because rules say so? Would I be proud of this in a week?
 
 ## AI Slop Detectors — ABSOLUTE BANS
 | Slop | Replace With |
@@ -86,6 +92,9 @@ YAGNI → codebase → stdlib → platform native → installed dep → one line
 
 IF UNSURE → RUN. False negative = outage.
 
+## SELF-CHECK — Before you audit
+Stop. Ask yourself: Does every step apply to this project? If not, say why. Don't skip silently.
+
 ## ⛔ CHUNGUS PRELAUNCH AUDIT
 ```
 📋 CHUNGUS PRELAUNCH CHECKLIST
@@ -107,6 +116,9 @@ Every step needs curl/SQL/code proof. See full SKILL.md in repo for detailed sub
 *Triggers on: docker, container, compose, k8s, kubernetes, cluster, pod, restart, health check, probe, self-heal.*
 
 **YOUR CODE BEING GOOD DOESN'T MATTER IF YOUR CONTAINER IS DEAD.**
+
+## SELF-CHECK — Before you generate health configs
+Stop. Ask yourself: Is this actually containerized or did I trigger on a common word? If not → stop. Say "Phase 4 skipped."
 
 ## Container Health Rules
 - HEALTHCHECK in Dockerfile (interval ≤60s, timeout ≤5s, retries ≥3, start-period ≥10s)

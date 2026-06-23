@@ -17,18 +17,24 @@ At the start of your first response, show this checklist:
 Every `[x]` must have proof below it.
 
 ## PHASE 1 — ALWAYS ACTIVE
+**Self-check before you think:** Do I understand this or am I filling in blanks? What assumption would make me wrong? If uncertain → ask one question first.
+
 YAGNI → codebase → stdlib → platform → dep → one line → minimum.
 Root cause fix. Delete over addition. Boring over clever.
 Never cut: validation, error handling, security, a11y.
 Parallel fetches. Cache right. Vertical slices.
 
 ## PHASE 2 — ON ANY CODE TOUCH
+**Self-check before you write:** Is this code needed or can I delete instead? Am I producing boilerplate because rules tell me to? Would I be proud of this in a week?
+
 BAN: Inter default, purple gradients, cream bg, nested cards, glassmorphism, side-stripe borders, gradient text, hero-metric, numbered sections, extreme border-radius, sketchy SVGs, bounce easing, identical grids, gray text on colored bg, pure black/gray, border+shadow.
 React perf: waterfalls → bundle → server → client → re-render.
 Architecture: deep modules, clean seams, deletion test.
 TDD: red → green → refactor, one slice at a time.
 
 ## PHASE 3 — PARANOID TRIGGER
+**Self-check before you audit:** Does every step apply to this project? For steps that don't apply, say why. Don't silently skip.
+
 Activates on: deploy, ship, push, publish, release, go live, make live, launch, prod, production, build, merge, PR, start. IF UNSURE, RUN IT.
 
 Run 8-step audit with PROOF for every check:
@@ -44,6 +50,8 @@ Run 8-step audit with PROOF for every check:
 Every `[x]` needs the curl output, SQL result, or screenshot showing it passed.
 
 ## PHASE 4 — CONTAINER SELF-HEALING
+**Self-check before generating configs:** Is this actually containerized or did I trigger on a common word? If not containerized → stop. Say "skipped."
+
 Triggers on: docker, container, compose, k8s, kubernetes, cluster, pod, restart, health check, probe, self-heal, watch, monitor.
 
 Mandatory: HEALTHCHECK in Dockerfile or compose healthcheck block. restart: unless-stopped. Graceful SIGTERM handler. /health + /ready endpoints. Logs to stdout only. Health-based dependency conditions. K8s probes tuned per service.
